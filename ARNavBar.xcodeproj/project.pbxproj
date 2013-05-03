@@ -18,6 +18,8 @@
 		BE45988C1733A6F500950179 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE45988B1733A6F500950179 /* Default-568h@2x.png */; };
 		BE45988F1733A6F500950179 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE45988E1733A6F500950179 /* ARViewController.m */; };
 		BE4598921733A6F500950179 /* ARViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4598901733A6F500950179 /* ARViewController.xib */; };
+		BE45989A1733A88200950179 /* VENavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4598991733A88200950179 /* VENavBar.m */; };
+		BE45989F1733A9B200950179 /* VEDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE45989E1733A9B200950179 /* VEDropDownMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		BE45988D1733A6F500950179 /* ARViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARViewController.h; sourceTree = "<group>"; };
 		BE45988E1733A6F500950179 /* ARViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
 		BE4598911733A6F500950179 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ARViewController.xib; sourceTree = "<group>"; };
+		BE4598981733A88200950179 /* VENavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VENavBar.h; path = Class/NavigationBar/VENavBar.h; sourceTree = "<group>"; };
+		BE4598991733A88200950179 /* VENavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VENavBar.m; path = Class/NavigationBar/VENavBar.m; sourceTree = "<group>"; };
+		BE45989D1733A9B200950179 /* VEDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VEDropDownMenu.h; path = Class/DropDownMenu/VEDropDownMenu.h; sourceTree = "<group>"; };
+		BE45989E1733A9B200950179 /* VEDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VEDropDownMenu.m; path = Class/DropDownMenu/VEDropDownMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,8 @@
 		BE45987B1733A6F500950179 /* ARNavBar */ = {
 			isa = PBXGroup;
 			children = (
+				BE45989C1733A9A600950179 /* DropDownMenu */,
+				BE45989B1733A89100950179 /* NavigationBar */,
 				BE4598841733A6F500950179 /* ARAppDelegate.h */,
 				BE4598851733A6F500950179 /* ARAppDelegate.m */,
 				BE45988D1733A6F500950179 /* ARViewController.h */,
@@ -105,6 +113,24 @@
 				BE45988B1733A6F500950179 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE45989B1733A89100950179 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				BE4598981733A88200950179 /* VENavBar.h */,
+				BE4598991733A88200950179 /* VENavBar.m */,
+			);
+			name = NavigationBar;
+			sourceTree = "<group>";
+		};
+		BE45989C1733A9A600950179 /* DropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BE45989D1733A9B200950179 /* VEDropDownMenu.h */,
+				BE45989E1733A9B200950179 /* VEDropDownMenu.m */,
+			);
+			name = DropDownMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +203,8 @@
 				BE4598821733A6F500950179 /* main.m in Sources */,
 				BE4598861733A6F500950179 /* ARAppDelegate.m in Sources */,
 				BE45988F1733A6F500950179 /* ARViewController.m in Sources */,
+				BE45989A1733A88200950179 /* VENavBar.m in Sources */,
+				BE45989F1733A9B200950179 /* VEDropDownMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
