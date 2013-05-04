@@ -10,6 +10,16 @@ With this simple project I want to illustrete how to use this two class:
 
 ## VEDropDownMenu
 
+Authors
+--------
+[Alessio](mailto:roberto@veespo.com) developer
+
+[Paco](mailto:paco@veespo.com) graphics
+
+## Contact ##
+
+[Alessio](mailto:roberto@veespo.com)
+
 License
 -------
 
