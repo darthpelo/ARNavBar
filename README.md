@@ -8,6 +8,9 @@ With this simple project I want to illustrete how to use this two class:
 
 ## VENavBar
 
+To use simply add VENavBar.h and .m to your Xcode proj.
+
+
 ## VEDropDownMenu
 
 Authors

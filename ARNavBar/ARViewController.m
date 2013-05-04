@@ -59,8 +59,8 @@
                 if (v.tag == 1) {
                     [UIView animateWithDuration:0.4 animations:^{
                         v.alpha = 0.0;
-                    }completion:^(BOOL finisched){
-                        if (finisched) [v removeFromSuperview];
+                    }completion:^(BOOL finished){
+                        if (finished) [v removeFromSuperview];
                     }];
                 }
             }
@@ -74,8 +74,8 @@
             if (v.tag == 1) {
                 [UIView animateWithDuration:0.4 animations:^{
                     v.alpha = 0.0;
-                }completion:^(BOOL finisched){
-                    if (finisched) [v removeFromSuperview];
+                }completion:^(BOOL finished){
+                    if (finished) [v removeFromSuperview];
                 }];
             }
         }
