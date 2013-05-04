@@ -53,14 +53,6 @@
         table.separatorStyle = UITableViewCellSeparatorStyleNone;
         [table setScrollEnabled:NO];
         
-        UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, table.frame.size.width, FOTHER_HEIGHT)];
-        [footerView setBackgroundColor:[UIColor clearColor]];
-        UIImageView *logo = [[UIImageView alloc] initWithFrame:footerView.frame];
-        logo.image = [VEVeespoImage image:@"footer_menu.png"];
-        [logo setBackgroundColor:[UIColor clearColor]];
-        [footerView addSubview:logo];
-        table.tableFooterView = footerView;
-        
         [UIView animateWithDuration:0.4 animations:^{
             if (!goDownDirection)
                 self.frame = CGRectMake(viewSender.frame.origin.x, viewSender.frame.origin.y - (self.list.count * CELL), 320, self.list.count * CELL);
@@ -103,7 +95,7 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     
     cell.backgroundView = [[UIImageView alloc] init];
-    UIImage *rowBackground = [VEVeespoImage image:@"sfondo_cella_menu.png"];
+    UIImage *rowBackground = [UIImage imageNamed:@"sfondo_cella_menu.png"];
     ((UIImageView *)cell.backgroundView).image = rowBackground;
     
     UIView *sv = [[UIView alloc] init];
@@ -120,23 +112,23 @@
     if (cell == nil) {
         cell = [self getCellContentView:CellIdentifier];
         cell.textLabel.font = [UIFont systemFontOfSize:15];
-        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
         cell.textLabel.textColor = [UIColor whiteColor];
     }
     
     if ([self.imgList count] == [self.list count]) {
         cell.textLabel.text =[list objectAtIndex:indexPath.row];
-//        cell.imageView.image = [imgList objectAtIndex:indexPath.row];
+        cell.imageView.image = [imgList objectAtIndex:indexPath.row];
     } else if ([self.imgList count] > [self.list count]) {
         cell.textLabel.text =[list objectAtIndex:indexPath.row];
-//        if (indexPath.row < [imgList count]) {
-//            cell.imageView.image = [imgList objectAtIndex:indexPath.row];
-//        }
+        if (indexPath.row < [imgList count]) {
+            cell.imageView.image = [imgList objectAtIndex:indexPath.row];
+        }
     } else if ([self.imgList count] < [self.list count]) {
         cell.textLabel.text =[list objectAtIndex:indexPath.row];
-//        if (indexPath.row < [imgList count]) {
-//            cell.imageView.image = [imgList objectAtIndex:indexPath.row];
-//        }
+        if (indexPath.row < [imgList count]) {
+            cell.imageView.image = [imgList objectAtIndex:indexPath.row];
+        }
     }
     
     return cell;

@@ -7,8 +7,6 @@
 //
 
 #import "VENavBar.h"
-#import "VEGlobalUICommon.h"
-#import "VENoRateableTagsViewController.h"
 
 @implementation VENavBar
 
@@ -21,33 +19,31 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame configuration:(VENavBarConfiguration)config andSkin:(NSInteger)skin
+- (id)initWithFrame:(CGRect)frame configuration:(VENavBarConfiguration)config
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         UIImageView *bb = [[UIImageView alloc] initWithFrame:frame];
-        bb.image = [VEVeespoImage image:@"navbar.png"];
-        if (skin == v6)
-            bb.image = [VEVeespoImage imageQurami:@"navbar.png"];
+        bb.image = [UIImage imageNamed:@"navbar.png"];
         [self addSubview:bb];
         
         switch (config) {
             case VENavBarDefault:{
                 closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(276, 0, 44, 44)];
-                [closeBtn setImage:[VEVeespoImage image:@"button-close-app.png"] forState:UIControlStateNormal];
+                [closeBtn setImage:[UIImage imageNamed:@"button-close-app.png"] forState:UIControlStateNormal];
                 [closeBtn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 [self addSubview:closeBtn];
                 
                 menuBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-                [menuBtn setImage:[VEVeespoImage image:@"Veespo-menu.png"] forState:UIControlStateNormal];
+                [menuBtn setImage:[UIImage imageNamed:@"button-menu.png"] forState:UIControlStateNormal];
                 [menuBtn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 [self addSubview:menuBtn];
             }
                 break;
             case VENavBarOnlyCloseBtn:{
                 closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(276, 0, 44, 44)];
-                [closeBtn setImage:[VEVeespoImage image:@"button-close-app.png"] forState:UIControlStateNormal];
+                [closeBtn setImage:[UIImage imageNamed:@"button-close-app.png"] forState:UIControlStateNormal];
                 [closeBtn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 [self addSubview:closeBtn];
             }
@@ -63,7 +59,7 @@
     [titleLabel setBackgroundColor:[UIColor clearColor]];
     titleLabel.text = title;
     titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.textAlignment = UITextAlignmentCenter;
+    titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = [UIFont fontWithName:@"Helvetica" size:24];
     [self addSubview:titleLabel];
 }
@@ -76,8 +72,8 @@
     } else if (sender == menuBtn) {
         if(dropDown == nil) {
             self.menuPressed(YES, self);
-            NSArray *arr = [NSArray arrayWithObjects:@"Aggiungi un commento", @"Informazioni sul tag selezionato", @"Help", @"Cambia lingua", @"Credits", nil];
-            NSArray *arrImage = [NSArray arrayWithObjects:[VEVeespoImage image:@"button-comment.png"], [VEVeespoImage image:@"button-info.png"], [VEVeespoImage image:@"button-help.png"], [VEVeespoImage image:@"button-help.png"], nil];
+            NSArray *arr = [NSArray arrayWithObjects:@"Add tag's comment", @"Tag info", @"Help", @"Languages", nil];
+            NSArray *arrImage = [NSArray arrayWithObjects:[UIImage imageNamed:@"icona_commenti.png"], [UIImage imageNamed:@"icona_info.png"], [UIImage imageNamed:@"icona_help.png"], [UIImage imageNamed:@"cambio-lingua.png"], nil];
             dropDown = [[VEDropDownMenu alloc] showDropDown:self titleList:arr imageList:arrImage directionDown:YES];
             __weak id bSelf = self;
             dropDown.function = ^(NSInteger index){
@@ -110,6 +106,6 @@
 
 - (void)changeButtonImage
 {
-    [closeBtn setImage:[VEVeespoImage image:@"button-OK.png"] forState:UIControlStateNormal];
+    [closeBtn setImage:[UIImage imageNamed:@"button-OK.png"] forState:UIControlStateNormal];
 }
 @end

@@ -20,6 +20,14 @@
 		BE4598921733A6F500950179 /* ARViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4598901733A6F500950179 /* ARViewController.xib */; };
 		BE45989A1733A88200950179 /* VENavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4598991733A88200950179 /* VENavBar.m */; };
 		BE45989F1733A9B200950179 /* VEDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE45989E1733A9B200950179 /* VEDropDownMenu.m */; };
+		BE5FE6E817355168004C6C6C /* button-close-app.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5FE6E017355168004C6C6C /* button-close-app.png */; };
+		BE5FE6E917355168004C6C6C /* button-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5FE6E117355168004C6C6C /* button-menu.png */; };
+		BE5FE6EA17355168004C6C6C /* cambio-lingua.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5FE6E217355168004C6C6C /* cambio-lingua.png */; };
+		BE5FE6EB17355168004C6C6C /* icona_commenti.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5FE6E317355168004C6C6C /* icona_commenti.png */; };
+		BE5FE6EC17355168004C6C6C /* icona_help.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5FE6E417355168004C6C6C /* icona_help.png */; };
+		BE5FE6ED17355168004C6C6C /* icona_info.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5FE6E517355168004C6C6C /* icona_info.png */; };
+		BE5FE6EE17355168004C6C6C /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5FE6E617355168004C6C6C /* navbar.png */; };
+		BE5FE6EF17355168004C6C6C /* sfondo_cella_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5FE6E717355168004C6C6C /* sfondo_cella_menu.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +51,14 @@
 		BE4598991733A88200950179 /* VENavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VENavBar.m; path = Class/NavigationBar/VENavBar.m; sourceTree = "<group>"; };
 		BE45989D1733A9B200950179 /* VEDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VEDropDownMenu.h; path = Class/DropDownMenu/VEDropDownMenu.h; sourceTree = "<group>"; };
 		BE45989E1733A9B200950179 /* VEDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VEDropDownMenu.m; path = Class/DropDownMenu/VEDropDownMenu.m; sourceTree = "<group>"; };
+		BE5FE6E017355168004C6C6C /* button-close-app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-close-app.png"; sourceTree = "<group>"; };
+		BE5FE6E117355168004C6C6C /* button-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-menu.png"; sourceTree = "<group>"; };
+		BE5FE6E217355168004C6C6C /* cambio-lingua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cambio-lingua.png"; sourceTree = "<group>"; };
+		BE5FE6E317355168004C6C6C /* icona_commenti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icona_commenti.png; sourceTree = "<group>"; };
+		BE5FE6E417355168004C6C6C /* icona_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icona_help.png; sourceTree = "<group>"; };
+		BE5FE6E517355168004C6C6C /* icona_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icona_info.png; sourceTree = "<group>"; };
+		BE5FE6E617355168004C6C6C /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
+		BE5FE6E717355168004C6C6C /* sfondo_cella_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sfondo_cella_menu.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +105,7 @@
 		BE45987B1733A6F500950179 /* ARNavBar */ = {
 			isa = PBXGroup;
 			children = (
+				BE5FE6DF17355168004C6C6C /* Resources */,
 				BE45989C1733A9A600950179 /* DropDownMenu */,
 				BE45989B1733A89100950179 /* NavigationBar */,
 				BE4598841733A6F500950179 /* ARAppDelegate.h */,
@@ -131,6 +148,21 @@
 				BE45989E1733A9B200950179 /* VEDropDownMenu.m */,
 			);
 			name = DropDownMenu;
+			sourceTree = "<group>";
+		};
+		BE5FE6DF17355168004C6C6C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE5FE6E017355168004C6C6C /* button-close-app.png */,
+				BE5FE6E117355168004C6C6C /* button-menu.png */,
+				BE5FE6E217355168004C6C6C /* cambio-lingua.png */,
+				BE5FE6E317355168004C6C6C /* icona_commenti.png */,
+				BE5FE6E417355168004C6C6C /* icona_help.png */,
+				BE5FE6E517355168004C6C6C /* icona_info.png */,
+				BE5FE6E617355168004C6C6C /* navbar.png */,
+				BE5FE6E717355168004C6C6C /* sfondo_cella_menu.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +222,14 @@
 				BE45988A1733A6F500950179 /* Default@2x.png in Resources */,
 				BE45988C1733A6F500950179 /* Default-568h@2x.png in Resources */,
 				BE4598921733A6F500950179 /* ARViewController.xib in Resources */,
+				BE5FE6E817355168004C6C6C /* button-close-app.png in Resources */,
+				BE5FE6E917355168004C6C6C /* button-menu.png in Resources */,
+				BE5FE6EA17355168004C6C6C /* cambio-lingua.png in Resources */,
+				BE5FE6EB17355168004C6C6C /* icona_commenti.png in Resources */,
+				BE5FE6EC17355168004C6C6C /* icona_help.png in Resources */,
+				BE5FE6ED17355168004C6C6C /* icona_info.png in Resources */,
+				BE5FE6EE17355168004C6C6C /* navbar.png in Resources */,
+				BE5FE6EF17355168004C6C6C /* sfondo_cella_menu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +332,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARNavBar/ARNavBar-Prefix.pch";
 				INFOPLIST_FILE = "ARNavBar/ARNavBar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -303,6 +344,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARNavBar/ARNavBar-Prefix.pch";
 				INFOPLIST_FILE = "ARNavBar/ARNavBar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -327,6 +369,7 @@
 				BE4598971733A6F600950179 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

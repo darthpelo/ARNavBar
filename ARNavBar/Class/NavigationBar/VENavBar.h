@@ -28,7 +28,7 @@ typedef enum {
 @property (nonatomic, strong) void (^functionRequest)(NSInteger number);
 @property (nonatomic, strong) NSString *title;
 
-- (id)initWithFrame:(CGRect)frame configuration:(VENavBarConfiguration)config andSkin:(NSInteger)skin;
+- (id)initWithFrame:(CGRect)frame configuration:(VENavBarConfiguration)config;
 - (void)changeButtonImage;
 - (void)closeMenu;
 

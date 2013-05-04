@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VENavBar.h"
 
 @interface ARViewController : UIViewController
 
