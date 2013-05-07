@@ -42,7 +42,7 @@ typedef enum {
 
 @property (nonatomic, copy) void (^menuPressed)(BOOL isOpen, VENavBar *navBar);
 @property (nonatomic, copy) void (^closePressed)();
-@property (nonatomic, strong) void (^functionRequest)(NSInteger number);
+@property (nonatomic, copy) void (^functionRequest)(NSInteger number);
 @property (nonatomic, strong) NSString *title;
 
 - (id)initWithFrame:(CGRect)frame configuration:(VENavBarConfiguration)config;
