@@ -56,6 +56,48 @@ In the code, to create ad instance of VEDropDownMenu, you should use the followi
 
 I soon will replace NSArray with plist or NSDictionary.
 
+This's a simple example about implementation of the menu in VENavBar, linked with a button.
+```objectivec
+- (IBAction)buttonPressed:(id)sender
+{
+    if (sender == closeBtn) {
+        if (self.closePressed)
+            self.closePressed();
+    } else if (sender == menuBtn) {
+        if(dropDown == nil) {
+            self.menuPressed(YES, self);
+            NSArray *arr = [NSArray arrayWithObjects:@"Add tag's comment", @"Tag info", @"Help", @"Languages", nil];
+            NSArray *arrImage = [NSArray arrayWithObjects:[UIImage imageNamed:@"icona_commenti.png"],
+                                 [UIImage imageNamed:@"icona_info.png"],
+                                 [UIImage imageNamed:@"icona_help.png"],
+                                 [UIImage imageNamed:@"cambio-lingua.png"], nil];
+            dropDown = [[VEDropDownMenu alloc] showDropDown:self
+                                                  titleList:arr
+                                                  imageList:arrImage
+                                              directionDown:YES];
+            __weak id bSelf = self;
+            dropDown.function = ^(NSInteger index){
+                [bSelf closeMenu];
+                [bSelf sendRequest:index];
+            };
+            dropDown.releseMenu = ^{
+                [bSelf closeMenu];
+            };
+        } else {
+            [self closeMenu];
+            self.menuPressed(NO, self);
+        }
+    }
+}
+```
+```objectivec
+- (void)closeMenu
+{
+    [dropDown hideDropDown:self];
+    dropDown = nil;
+}
+```
+
 Authors
 --------
 [Alessio](mailto:roberto@veespo.com) developer
