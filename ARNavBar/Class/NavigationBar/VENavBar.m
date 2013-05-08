@@ -90,8 +90,14 @@
         if(dropDown == nil) {
             self.menuPressed(YES, self);
             NSArray *arr = [NSArray arrayWithObjects:@"Add tag's comment", @"Tag info", @"Help", @"Languages", nil];
-            NSArray *arrImage = [NSArray arrayWithObjects:[UIImage imageNamed:@"icona_commenti.png"], [UIImage imageNamed:@"icona_info.png"], [UIImage imageNamed:@"icona_help.png"], [UIImage imageNamed:@"cambio-lingua.png"], nil];
-            dropDown = [[VEDropDownMenu alloc] showDropDown:self titleList:arr imageList:arrImage directionDown:YES];
+            NSArray *arrImage = [NSArray arrayWithObjects:[UIImage imageNamed:@"icona_commenti.png"],
+                                 [UIImage imageNamed:@"icona_info.png"],
+                                 [UIImage imageNamed:@"icona_help.png"],
+                                 [UIImage imageNamed:@"cambio-lingua.png"], nil];
+            dropDown = [[VEDropDownMenu alloc] showDropDown:self
+                                                  titleList:arr
+                                                  imageList:arrImage
+                                              directionDown:YES];
             __weak id bSelf = self;
             dropDown.function = ^(NSInteger index){
                 [bSelf closeMenu];

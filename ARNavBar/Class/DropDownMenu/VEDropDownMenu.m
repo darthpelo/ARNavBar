@@ -29,7 +29,6 @@
 #import "QuartzCore/QuartzCore.h"
 
 #define CELL 44
-#define FOTHER_HEIGHT 33
 
 @interface VEDropDownMenu ()
 @property(nonatomic, strong) UITableView *table;
@@ -76,9 +75,9 @@
             if (!goDownDirection)
                 self.frame = CGRectMake(viewSender.frame.origin.x, viewSender.frame.origin.y - (self.list.count * CELL), 320, self.list.count * CELL);
             else
-                self.frame = CGRectMake(viewSender.frame.origin.x, viewSender.frame.origin.y + viewSender.frame.size.height, 320, (self.list.count * CELL) + FOTHER_HEIGHT);
+                self.frame = CGRectMake(viewSender.frame.origin.x, viewSender.frame.origin.y + viewSender.frame.size.height, 320, (self.list.count * CELL));
             
-            table.frame = CGRectMake(0, 0, 320, (self.list.count * CELL) + FOTHER_HEIGHT);
+            table.frame = CGRectMake(0, 0, 320, (self.list.count * CELL));
         }];
         
         [view.superview addSubview:self];
