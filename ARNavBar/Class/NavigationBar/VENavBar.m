@@ -27,6 +27,11 @@
 
 @implementation VENavBar
 
++ (NSInteger)height
+{
+    return NAVBAR_VIEW_WIDTH;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

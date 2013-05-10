@@ -27,6 +27,8 @@
 #import "QuartzCore/QuartzCore.h"
 #import "VEDropDownMenu.h"
 
+#define NAVBAR_VIEW_WIDTH   44
+
 typedef enum {
     VENavBarDefault,
     VENavBarOnlyCloseBtn
@@ -45,6 +47,7 @@ typedef enum {
 @property (nonatomic, copy) void (^functionRequest)(NSInteger number);
 @property (nonatomic, strong) NSString *title;
 
++ (NSInteger)height;
 - (id)initWithFrame:(CGRect)frame configuration:(VENavBarConfiguration)config;
 - (void)changeButtonImage;
 - (void)closeMenu;

@@ -37,13 +37,13 @@
 {
     [super viewDidLoad];
 	
-    navBar = [[VENavBar alloc] initWithFrame:CGRectMake(0, 0, 320, 46) configuration:VENavBarDefault];
+    navBar = [[VENavBar alloc] initWithFrame:CGRectMake(0, 0, 320, [VENavBar height]) configuration:VENavBarDefault];
     [self.view addSubview:navBar];
     [navBar setUserInteractionEnabled:YES];
     __weak ARViewController *bSelf = self;
     navBar.menuPressed = ^(BOOL isOpen, VENavBar *_navBar){
         if (isOpen) {
-            UIView *bkgr = [[UIView alloc] initWithFrame:CGRectMake(0, 44, 320, 548)];
+            UIView *bkgr = [[UIView alloc] initWithFrame:CGRectMake(0, [VENavBar height], 320, 548)];
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:bSelf action:@selector(tapGesture)];
             [bkgr addGestureRecognizer:tap];
             [bSelf.view addSubview:bkgr];
