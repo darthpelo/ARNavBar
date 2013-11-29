@@ -25,12 +25,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class ARViewController;
+@class ARFirstViewController;
 
 @interface ARAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ARViewController *viewController;
+@property (strong, nonatomic) ARFirstViewController *viewController;
+@property (nonatomic, strong) UINavigationController* navController;
 
 @end

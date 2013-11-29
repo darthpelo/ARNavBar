@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		703558361848A44100812078 /* VENavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 703558351848A44100812078 /* VENavBar.m */; };
+		703558391848AF4300812078 /* ARSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703558381848AF4300812078 /* ARSecondViewController.m */; };
+		7035583C1848CBBE00812078 /* ARContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7035583B1848CBBE00812078 /* ARContainerViewController.m */; };
+		7035583F1848D87300812078 /* ARModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7035583E1848D87300812078 /* ARModalViewController.m */; };
 		BE4598761733A6F500950179 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4598751733A6F500950179 /* UIKit.framework */; };
 		BE4598781733A6F500950179 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4598771733A6F500950179 /* Foundation.framework */; };
 		BE45987A1733A6F500950179 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4598791733A6F500950179 /* CoreGraphics.framework */; };
@@ -16,9 +20,7 @@
 		BE4598881733A6F500950179 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4598871733A6F500950179 /* Default.png */; };
 		BE45988A1733A6F500950179 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE4598891733A6F500950179 /* Default@2x.png */; };
 		BE45988C1733A6F500950179 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE45988B1733A6F500950179 /* Default-568h@2x.png */; };
-		BE45988F1733A6F500950179 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE45988E1733A6F500950179 /* ARViewController.m */; };
-		BE4598921733A6F500950179 /* ARViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE4598901733A6F500950179 /* ARViewController.xib */; };
-		BE45989A1733A88200950179 /* VENavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4598991733A88200950179 /* VENavBar.m */; };
+		BE45988F1733A6F500950179 /* ARFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE45988E1733A6F500950179 /* ARFirstViewController.m */; };
 		BE45989F1733A9B200950179 /* VEDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BE45989E1733A9B200950179 /* VEDropDownMenu.m */; };
 		BE5FE6E817355168004C6C6C /* button-close-app.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5FE6E017355168004C6C6C /* button-close-app.png */; };
 		BE5FE6E917355168004C6C6C /* button-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5FE6E117355168004C6C6C /* button-menu.png */; };
@@ -31,6 +33,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		703558341848A44100812078 /* VENavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENavBar.h; sourceTree = "<group>"; };
+		703558351848A44100812078 /* VENavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENavBar.m; sourceTree = "<group>"; };
+		703558371848AF4300812078 /* ARSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSecondViewController.h; sourceTree = "<group>"; };
+		703558381848AF4300812078 /* ARSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSecondViewController.m; sourceTree = "<group>"; };
+		7035583A1848CBBE00812078 /* ARContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARContainerViewController.h; sourceTree = "<group>"; };
+		7035583B1848CBBE00812078 /* ARContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARContainerViewController.m; sourceTree = "<group>"; };
+		7035583D1848D87300812078 /* ARModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARModalViewController.h; sourceTree = "<group>"; };
+		7035583E1848D87300812078 /* ARModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARModalViewController.m; sourceTree = "<group>"; };
 		BE4598721733A6F500950179 /* ARNavBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARNavBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4598751733A6F500950179 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BE4598771733A6F500950179 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,11 +54,8 @@
 		BE4598871733A6F500950179 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BE4598891733A6F500950179 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BE45988B1733A6F500950179 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		BE45988D1733A6F500950179 /* ARViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARViewController.h; sourceTree = "<group>"; };
-		BE45988E1733A6F500950179 /* ARViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
-		BE4598911733A6F500950179 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ARViewController.xib; sourceTree = "<group>"; };
-		BE4598981733A88200950179 /* VENavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VENavBar.h; path = Class/NavigationBar/VENavBar.h; sourceTree = "<group>"; };
-		BE4598991733A88200950179 /* VENavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VENavBar.m; path = Class/NavigationBar/VENavBar.m; sourceTree = "<group>"; };
+		BE45988D1733A6F500950179 /* ARFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARFirstViewController.h; sourceTree = "<group>"; };
+		BE45988E1733A6F500950179 /* ARFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARFirstViewController.m; sourceTree = "<group>"; };
 		BE45989D1733A9B200950179 /* VEDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VEDropDownMenu.h; path = Class/DropDownMenu/VEDropDownMenu.h; sourceTree = "<group>"; };
 		BE45989E1733A9B200950179 /* VEDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VEDropDownMenu.m; path = Class/DropDownMenu/VEDropDownMenu.m; sourceTree = "<group>"; };
 		BE5FE6E017355168004C6C6C /* button-close-app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-close-app.png"; sourceTree = "<group>"; };
@@ -75,6 +82,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70C27CB41848F50900D093A0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				70C27CB61848F52E00D093A0 /* Others */,
+				70C27CB51848F51800D093A0 /* Container */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		70C27CB51848F51800D093A0 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				7035583A1848CBBE00812078 /* ARContainerViewController.h */,
+				7035583B1848CBBE00812078 /* ARContainerViewController.m */,
+			);
+			name = Container;
+			sourceTree = "<group>";
+		};
+		70C27CB61848F52E00D093A0 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				BE45988D1733A6F500950179 /* ARFirstViewController.h */,
+				BE45988E1733A6F500950179 /* ARFirstViewController.m */,
+				703558371848AF4300812078 /* ARSecondViewController.h */,
+				703558381848AF4300812078 /* ARSecondViewController.m */,
+				7035583D1848D87300812078 /* ARModalViewController.h */,
+				7035583E1848D87300812078 /* ARModalViewController.m */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		70C27CB71848F53E00D093A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BE45989C1733A9A600950179 /* DropDownMenu */,
+				BE45989B1733A89100950179 /* NavigationBar */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		BE4598691733A6F500950179 = {
 			isa = PBXGroup;
 			children = (
@@ -105,14 +152,11 @@
 		BE45987B1733A6F500950179 /* ARNavBar */ = {
 			isa = PBXGroup;
 			children = (
+				70C27CB71848F53E00D093A0 /* View */,
+				70C27CB41848F50900D093A0 /* Controllers */,
 				BE5FE6DF17355168004C6C6C /* Resources */,
-				BE45989C1733A9A600950179 /* DropDownMenu */,
-				BE45989B1733A89100950179 /* NavigationBar */,
 				BE4598841733A6F500950179 /* ARAppDelegate.h */,
 				BE4598851733A6F500950179 /* ARAppDelegate.m */,
-				BE45988D1733A6F500950179 /* ARViewController.h */,
-				BE45988E1733A6F500950179 /* ARViewController.m */,
-				BE4598901733A6F500950179 /* ARViewController.xib */,
 				BE45987C1733A6F500950179 /* Supporting Files */,
 			);
 			path = ARNavBar;
@@ -135,8 +179,8 @@
 		BE45989B1733A89100950179 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				BE4598981733A88200950179 /* VENavBar.h */,
-				BE4598991733A88200950179 /* VENavBar.m */,
+				703558341848A44100812078 /* VENavBar.h */,
+				703558351848A44100812078 /* VENavBar.m */,
 			);
 			name = NavigationBar;
 			sourceTree = "<group>";
@@ -221,7 +265,6 @@
 				BE4598881733A6F500950179 /* Default.png in Resources */,
 				BE45988A1733A6F500950179 /* Default@2x.png in Resources */,
 				BE45988C1733A6F500950179 /* Default-568h@2x.png in Resources */,
-				BE4598921733A6F500950179 /* ARViewController.xib in Resources */,
 				BE5FE6E817355168004C6C6C /* button-close-app.png in Resources */,
 				BE5FE6E917355168004C6C6C /* button-menu.png in Resources */,
 				BE5FE6EA17355168004C6C6C /* cambio-lingua.png in Resources */,
@@ -242,8 +285,11 @@
 			files = (
 				BE4598821733A6F500950179 /* main.m in Sources */,
 				BE4598861733A6F500950179 /* ARAppDelegate.m in Sources */,
-				BE45988F1733A6F500950179 /* ARViewController.m in Sources */,
-				BE45989A1733A88200950179 /* VENavBar.m in Sources */,
+				BE45988F1733A6F500950179 /* ARFirstViewController.m in Sources */,
+				7035583C1848CBBE00812078 /* ARContainerViewController.m in Sources */,
+				703558361848A44100812078 /* VENavBar.m in Sources */,
+				7035583F1848D87300812078 /* ARModalViewController.m in Sources */,
+				703558391848AF4300812078 /* ARSecondViewController.m in Sources */,
 				BE45989F1733A9B200950179 /* VEDropDownMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,14 +303,6 @@
 				BE45987F1733A6F500950179 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		BE4598901733A6F500950179 /* ARViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE4598911733A6F500950179 /* en */,
-			);
-			name = ARViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -332,7 +370,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARNavBar/ARNavBar-Prefix.pch";
 				INFOPLIST_FILE = "ARNavBar/ARNavBar-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -344,7 +382,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARNavBar/ARNavBar-Prefix.pch";
 				INFOPLIST_FILE = "ARNavBar/ARNavBar-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

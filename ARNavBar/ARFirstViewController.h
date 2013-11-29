@@ -1,9 +1,9 @@
 //
-//  VENavBar.h
-//  VeespoFramework
+//  ARViewController.h
+//  ARNavBar
 //
-//  Created by Alessio Roberto on 31/01/13.
-//  Copyright (c) 2013 Veespo Ltd. All rights reserved.
+//  Created by Alessio Roberto on 03/05/13.
+//  Copyright (c) 2013 Alessio Roberto. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,32 +24,7 @@
 //  THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import "QuartzCore/QuartzCore.h"
-#import "VEDropDownMenu.h"
 
-#define NAVBAR_VIEW_WIDTH   44
-
-typedef enum {
-    VENavBarDefault,
-    VENavBarOnlyCloseBtn
-} VENavBarConfiguration;
-
-@interface VENavBar : UIView {
-    UIButton *menuBtn;
-    UIButton *closeBtn;
-    UILabel *titleLabel;
-    VEDropDownMenu *dropDown;
-    UIView *bkgr;
-}
-
-@property (nonatomic, copy) void (^menuPressed)(BOOL isOpen, VENavBar *navBar);
-@property (nonatomic, copy) void (^closePressed)();
-@property (nonatomic, copy) void (^functionRequest)(NSInteger number);
-@property (nonatomic, strong) NSString *title;
-
-+ (NSInteger)height;
-- (id)initWithFrame:(CGRect)frame configuration:(VENavBarConfiguration)config;
-- (void)changeButtonImage;
-- (void)closeMenu;
+@interface ARFirstViewController : UIViewController
 
 @end

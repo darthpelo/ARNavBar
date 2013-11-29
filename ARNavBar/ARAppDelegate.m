@@ -24,8 +24,9 @@
 //  THE SOFTWARE.
 
 #import "ARAppDelegate.h"
-
-#import "ARViewController.h"
+#import "VENavBar.h"
+#import "ARContainerViewController.h"
+#import "ARFirstViewController.h"
 
 @implementation ARAppDelegate
 
@@ -33,8 +34,13 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ARViewController alloc] initWithNibName:@"ARViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    self.viewController = [[ARFirstViewController alloc] initWithNibName:@"ARViewController" bundle:nil];
+    
+    ARContainerViewController* containerVc = [[ARContainerViewController alloc] init];
+    
+    self.navController = [[UINavigationController alloc] initWithNavigationBarClass:[VENavBar class] toolbarClass:nil];
+    self.navController.viewControllers = @[containerVc];
+    self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
     return YES;
 }

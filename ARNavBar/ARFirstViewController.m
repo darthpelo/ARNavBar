@@ -1,5 +1,5 @@
 //
-//  ARViewController.h
+//  ARViewController.m
 //  ARNavBar
 //
 //  Created by Alessio Roberto on 03/05/13.
@@ -22,10 +22,46 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+//
 
-#import <UIKit/UIKit.h>
-#import "VENavBar.h"
+#import "ARFirstViewController.h"
 
-@interface ARViewController : UIViewController
+
+@interface ARFirstViewController ()
+
+@end
+
+@implementation ARFirstViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UILabel* firstLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 80, 300, 70)];
+    [firstLabel setText:@"I'M THE FIRST\nVIEW CONTROLLER"];
+    [firstLabel setTextAlignment:NSTextAlignmentCenter];
+    [firstLabel setTextColor:[UIColor whiteColor]];
+    [firstLabel setNumberOfLines:2];
+    [firstLabel setFont:[UIFont fontWithName:@"ArialMT" size:30.0f]];
+    [self.view addSubview:firstLabel];
+
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+- (void)closeView
+{
+    // Manage VC close
+}
+
+- (void)functionsManagment:(NSInteger)number
+{
+    // Manage functions
+}
 
 @end
