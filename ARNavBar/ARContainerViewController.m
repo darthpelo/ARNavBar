@@ -31,16 +31,6 @@
     return self;
 }
 
-- (id)initWithViewController:(UIViewController *)viewController
-{
-    self = [super init];
-    if (self) {
-        [self presentNewViewController:viewController];
-    }
-    
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -50,28 +40,33 @@
     
     self.navBar = (VENavBar*)self.navigationController.navigationBar;
     
-    [self.navBar.rightButton addTarget:self action:@selector(closeButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.navBar.rightButton addTarget:self action:@selector(rightButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
+    //Add first child view controller
     ARFirstViewController* vc = [[ARFirstViewController alloc] init];
-    [self presentNewViewController:vc];
+    [self addNewViewController:vc];
     
-    
+    //Create a weak reference to self
     __weak ARContainerViewController* weakSelf = self;
+    
+    //NavBar block call
     self.navBar.functionRequest = ^(NSInteger number) {
         
-        if (number == 1) {
-            ARSecondViewController* vc = [[ARSecondViewController alloc] init];
-            [weakSelf presentNewViewController:vc];
-        } else if (number == 0) {
+        //Add new child view controller based on "number"
+        if (number == 0) {
             ARFirstViewController* vc = [[ARFirstViewController alloc] init];
-            [weakSelf presentNewViewController:vc];
+            [weakSelf addNewViewController:vc];
+        } else if (number == 1) {
+            ARSecondViewController* vc = [[ARSecondViewController alloc] init];
+            [weakSelf addNewViewController:vc];
         }
         
     };
 
 }
 
-- (void)closeButtonPressed
+//Present a Modal View Controller
+- (void)rightButtonPressed
 {
     ARModalViewController* vc = [[ARModalViewController alloc] init];
     UINavigationController* navController = [[UINavigationController alloc] initWithNavigationBarClass:[VENavBar class] toolbarClass:nil];
@@ -79,43 +74,34 @@
     [self presentViewController:navController animated:YES completion:nil];
 }
 
-#pragma mark - Present New View Controller
-- (void)presentNewViewController:(UIViewController*)newVc
+#pragma mark - Add New View Controller
+- (void)addNewViewController:(UIViewController*)newVc
 {
-    //0. Remove the current Detail View Controller showed
+    //Remove the current View Controller showed
     if(self.currentViewController){
-        [self removeCurrentDetailViewController];
+
+        [self.currentViewController willMoveToParentViewController:nil];
+        
+        [self.currentViewController.view removeFromSuperview];
+
+        [self.currentViewController removeFromParentViewController];
     }
     
-    //1. Add the detail controller as child of the container
+    //Add the new controller as child of the container
     [self addChildViewController:newVc];
     
-    //2. Define the detail controller's view size
+    //New VC's main view size
     newVc.view.frame = self.view.bounds;
     
-    //3. Add the Detail controller's view to the Container's detail view and save a reference to the detail View Controller
+    //Add the new controller's view to the Container's view and save a reference to the new View Controller
     [self.view addSubview:newVc.view];
     self.currentViewController = newVc;
     
-    //4. Complete the add flow calling the function didMoveToParentViewController
     [newVc didMoveToParentViewController:self];
     
     
 }
 
-- (void)removeCurrentDetailViewController{
-    
-    //1. Call the willMoveToParentViewController with nil
-    //   This is the last method where your detailViewController can perform some operations before neing removed
-    [self.currentViewController willMoveToParentViewController:nil];
-    
-    //2. Remove the DetailViewController's view from the Container
-    [self.currentViewController.view removeFromSuperview];
-    
-    //3. Update the hierarchy"
-    //   Automatically the method didMoveToParentViewController: will be called on the detailViewController)
-    [self.currentViewController removeFromParentViewController];
-}
 
 - (void)didReceiveMemoryWarning
 {

@@ -38,7 +38,7 @@
     
     [self.navBar.rightButton setHidden:YES];
     [self.navBar.menuButton setHidden:YES];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Chiudi" style:UIBarButtonItemStylePlain target:self action:@selector(chiudi)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Chiudi" style:UIBarButtonItemStylePlain target:self action:@selector(close)];
     
     UILabel* modalLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 80, 300, 70)];
     [modalLabel setText:@"I'M THE MODAL\nVIEW CONTROLLER"];
@@ -49,7 +49,8 @@
     [self.view addSubview:modalLabel];
 }
 
-- (void)chiudi
+//Dismiss the view controller
+- (void)close
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

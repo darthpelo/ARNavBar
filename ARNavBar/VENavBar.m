@@ -24,15 +24,18 @@
     if (self) {
         // Initialization code
         
+        //Navigation Bar UI
         [self setBarTintColor:[UIColor redColor]];
         [self setTintColor:[UIColor whiteColor]];
         [self setTranslucent:NO];
         
+        //Left Button
         _menuButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BAR_BUTTON_ITEM_WIDTH, BAR_BUTTON_ITEM_WIDTH)];
         [_menuButton setImage:[UIImage imageNamed:@"button-menu"] forState:UIControlStateNormal];
         [_menuButton addTarget:self action:@selector(menuNavPressed) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_menuButton];
 
+        //Right Button
         _rightButton = [[UIButton alloc] initWithFrame:CGRectMake(235, 0, 100, BAR_BUTTON_ITEM_WIDTH)];
         [_rightButton setTitle:@"Modal" forState:UIControlStateNormal];
         [self addSubview:_rightButton];

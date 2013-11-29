@@ -10,6 +10,4 @@
 
 @interface ARContainerViewController : UIViewController
 
-- (id)initWithViewController:(UIViewController*)viewController;
-
 @end
