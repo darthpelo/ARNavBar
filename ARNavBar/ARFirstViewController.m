@@ -25,7 +25,7 @@
 //
 
 #import "ARFirstViewController.h"
-
+#import "ARSecondViewController.h"
 
 @interface ARFirstViewController ()
 
@@ -44,7 +44,18 @@
     [firstLabel setNumberOfLines:2];
     [firstLabel setFont:[UIFont fontWithName:@"ArialMT" size:30.0f]];
     [self.view addSubview:firstLabel];
+    
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setTitle:@"DETAIL" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [button setFrame:CGRectMake(50, 200, 60, 45)];
+    [self.view addSubview:button];
+}
 
+- (void)buttonPressed
+{
+    ARSecondViewController* vc = [[ARSecondViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

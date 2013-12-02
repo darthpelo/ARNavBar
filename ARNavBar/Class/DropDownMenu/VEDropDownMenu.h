@@ -27,7 +27,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VEDropDownMenu : UIView <UITableViewDelegate, UITableViewDataSource> {
+@interface VEDropDownMenu : UIView {
     BOOL goDownDirection;
 }
 

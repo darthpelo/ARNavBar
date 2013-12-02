@@ -30,12 +30,14 @@
 
 #define CELL 44
 
-@interface VEDropDownMenu ()
+@interface VEDropDownMenu () <UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic, strong) UITableView *table;
 @property(nonatomic, strong) UIView *viewSender;
 @property(nonatomic, retain) NSArray *list;
 @property(nonatomic, retain) NSArray *imgList;
 @end
+
+static NSString *CellIdentifier = @"Cell";
 
 @implementation VEDropDownMenu
 
@@ -49,10 +51,10 @@
         self.list = [NSArray arrayWithArray:titleList];
         self.imgList = [NSArray arrayWithArray:imageList];
         if (!goDownDirection) {
-            self.frame = CGRectMake(self.viewSender.frame.origin.x, self.viewSender.frame.origin.y, 320, 0);
+            self.frame = CGRectMake(CGRectGetMinX(self.viewSender.frame), CGRectGetMinY(self.viewSender.frame), 320, 0);
             self.layer.shadowOffset = CGSizeMake(0, -3);
         }else {
-            self.frame = CGRectMake(self.viewSender.frame.origin.x, self.viewSender.frame.origin.y+self.viewSender.frame.size.height, 320, 0);
+            self.frame = CGRectMake(CGRectGetMinX(self.viewSender.frame), CGRectGetMinY(self.viewSender.frame)+CGRectGetHeight(self.viewSender.frame), 320, 0);
             self.layer.shadowOffset = CGSizeMake(0, 3);
         }
         
@@ -65,13 +67,14 @@
         self.table.dataSource = self;
         self.table.backgroundColor = [UIColor clearColor];
         self.table.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [self.table registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
         [self.table setScrollEnabled:NO];
         
         [UIView animateWithDuration:0.4 animations:^{
             if (!goDownDirection)
-                self.frame = CGRectMake(self.viewSender.frame.origin.x, self.viewSender.frame.origin.y - (self.list.count * CELL), 320, self.list.count * CELL);
+                self.frame = CGRectMake(CGRectGetMinX(self.viewSender.frame), CGRectGetMinY(self.viewSender.frame) - (self.list.count * CELL), 320, self.list.count * CELL);
             else
-                self.frame = CGRectMake(self.viewSender.frame.origin.x, self.viewSender.frame.origin.y + self.viewSender.frame.size.height, 320, (self.list.count * CELL));
+                self.frame = CGRectMake(CGRectGetMinX(self.viewSender.frame), CGRectGetMinY(self.viewSender.frame)+ CGRectGetHeight(self.viewSender.frame), 320, (self.list.count * CELL));
             
             self.table.frame = CGRectMake(0, 0, 320, (self.list.count * CELL));
         }];
@@ -93,20 +96,29 @@
     }];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#pragma mark - UITableViewDataSource methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return CELL;
-}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [self.list count];
 }
 
-- (UITableViewCell *) getCellContentView:(NSString *)cellIdentifier {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
+    cell.textLabel.font = [UIFont systemFontOfSize:15];
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
     
     cell.backgroundView = [[UIImageView alloc] init];
     UIImage *rowBackground = [UIImage imageNamed:@"sfondo_cella_menu.png"];
@@ -116,19 +128,6 @@
     sv.backgroundColor = [UIColor grayColor];
     cell.selectedBackgroundView = sv;
     
-    return cell;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [self getCellContentView:CellIdentifier];
-        cell.textLabel.font = [UIFont systemFontOfSize:15];
-        cell.textLabel.textAlignment = NSTextAlignmentCenter;
-        cell.textLabel.textColor = [UIColor whiteColor];
-    }
     
     if ([self.imgList count] == [self.list count]) {
         cell.textLabel.text =[self.list objectAtIndex:indexPath.row];
@@ -148,7 +147,14 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+#pragma mark - UITableViewDelegate methods
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CELL;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     [self hideDropDown:self.viewSender];
     self.releseMenu();
     self.function(indexPath.row);
