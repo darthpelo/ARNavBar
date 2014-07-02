@@ -24,8 +24,7 @@
 //  THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import "VENavBar.h"
 
-@interface ARViewController : UIViewController
+@interface ARFirstViewController : UIViewController
 
 @end

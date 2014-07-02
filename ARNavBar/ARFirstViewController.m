@@ -1,9 +1,9 @@
 //
-//  VENavBar.h
-//  VeespoFramework
+//  ARViewController.m
+//  ARNavBar
 //
-//  Created by Alessio Roberto on 31/01/13.
-//  Copyright (c) 2013 Veespo Ltd. All rights reserved.
+//  Created by Alessio Roberto on 03/05/13.
+//  Copyright (c) 2013 Alessio Roberto. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,34 +22,45 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+//
 
-#import <UIKit/UIKit.h>
-#import "QuartzCore/QuartzCore.h"
-#import "VEDropDownMenu.h"
+#import "ARFirstViewController.h"
+#import "ARSecondViewController.h"
 
-#define NAVBAR_VIEW_WIDTH   44
+@interface ARFirstViewController ()
 
-typedef enum {
-    VENavBarDefault,
-    VENavBarOnlyCloseBtn
-} VENavBarConfiguration;
+@end
 
-@interface VENavBar : UIView {
-    UIButton *menuBtn;
-    UIButton *closeBtn;
-    UILabel *titleLabel;
-    VEDropDownMenu *dropDown;
-    UIView *bkgr;
+@implementation ARFirstViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UILabel* firstLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 80, 300, 70)];
+    [firstLabel setText:@"I'M THE FIRST\nVIEW CONTROLLER"];
+    [firstLabel setTextAlignment:NSTextAlignmentCenter];
+    [firstLabel setTextColor:[UIColor whiteColor]];
+    [firstLabel setNumberOfLines:2];
+    [firstLabel setFont:[UIFont fontWithName:@"ArialMT" size:30.0f]];
+    [self.view addSubview:firstLabel];
 }
 
-@property (nonatomic, copy) void (^menuPressed)(BOOL isOpen, VENavBar *navBar);
-@property (nonatomic, copy) void (^closePressed)();
-@property (nonatomic, copy) void (^functionRequest)(NSInteger number);
-@property (nonatomic, strong) NSString *title;
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
-+ (NSInteger)height;
-- (id)initWithFrame:(CGRect)frame configuration:(VENavBarConfiguration)config;
-- (void)changeButtonImage;
-- (void)closeMenu;
+
+- (void)closeView
+{
+    // Manage VC close
+}
+
+- (void)functionsManagment:(NSInteger)number
+{
+    // Manage functions
+}
 
 @end
